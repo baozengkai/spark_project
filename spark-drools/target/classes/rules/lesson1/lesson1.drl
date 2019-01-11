@@ -1,0 +1,13 @@
+package rules.lesson1;
+
+import com.xiaobao.model.Demo;
+
+
+rule "First Rule"
+    when
+        $p : Demo(message == 2)
+
+    then
+
+        System.out.println($p.getUserName()+"触发了规则，3");
+end

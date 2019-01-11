@@ -1,0 +1,26 @@
+
+
+//import com.xiaobao.model.Demo;
+//
+//
+//rule "First Rule"
+//    when
+//        $p : Demo(message == 2)
+//
+//    then
+//
+//        System.out.println($p.getUserName()+"触发了规则，3");
+//end
+
+
+package rules.lesson1;
+import com.xiaobao.model.TransactionEvent
+
+rule test
+    when
+        $total : Number(intValue >= 2) from accumulate(
+                        $t1:TransactionEvent($amount :totalAmount) over window:time(10m),
+                        count($t1))
+    then
+        System.out.println("在10m内统计的事件总数为 : "+ $total);
+ end

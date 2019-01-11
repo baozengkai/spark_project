@@ -24,6 +24,7 @@ import java.util.List;
 public class RddDemoTwo {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("RddDemoOne");
+
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         List<Integer>  data = Arrays.asList(1,2,3,4,5,1);
